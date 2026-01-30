@@ -252,10 +252,10 @@ body {
   background: #ff6b6b;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 9px;
   font-size: 12px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.5s;
 }
 
 .clear-btn:hover {
