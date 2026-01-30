@@ -8,8 +8,8 @@ function App() {
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  useEffect(() => {
-    loadHistory();
+  use Effect(() => {
+    load History();
   }, []);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function App() {
         // History loaded successfully
       }
     } catch (error) {
-      console.error('Failed to load history:', error);
+      console.error('Failed to show history:', error);
     }
   };
 
