@@ -9,8 +9,8 @@ from datetime import datetime
 import asyncio
 import tempfile
 import edge_tts
-from pydub import AudioSegment
-from pydub.playback import play
+# from pydub import AudioSegment
+# from pydub.playback import play
 
 app = Flask(__name__)
 CORS(app)
@@ -62,8 +62,8 @@ def get_infini_think_reply(prompt, context_messages):
     }
 
     # Add noise to avoid repeated responses
+    
     noise = f"(time: {datetime.now().strftime('%H:%M:%S')}, rand: {random.randint(1, 9999)})"
-
     payload = {
         "model": MODEL,
         "messages": [
@@ -121,6 +121,7 @@ def chat():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+
 @app.route('/api/history', methods=['GET'])
 def get_history():
     try:
@@ -131,7 +132,7 @@ def get_history():
         return jsonify({'history': [], 'success': True}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-
+    
 @app.route('/api/clear-history', methods=['POST'])
 def clear_history():
     try:
