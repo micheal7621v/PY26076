@@ -8,7 +8,13 @@ function App() {
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
+
+
+
+
+
   use Effect(() => {
+
     load History();
   }, []);
 
@@ -35,6 +41,9 @@ function App() {
     setInput('');
     setMessages([...messages, { type: 'user', text: userMessage }]);
     setLoading(true);
+
+
+
 
     try {
       const response = await axios.post('http://localhost:5000/api/chat', { message: userMessage });
@@ -129,3 +138,6 @@ function App() {
 }
 
 export default App;
+
+
+
